@@ -16,7 +16,7 @@
 数据集上进行训练，所构建的Ganomaly模型可以对视频中发生的人的跌倒行为进行识别。对于跌倒检测这一时间序列数据结构，论文中的Enoder值相减，与阈值比较判断是否跌倒现阶段在准确率还有一定的问题，还需要进一步研究。
 
 ### 2. 数据预处理
-&emsp;&emsp;使用的Le2i Fall detection Dataset视频数据中，只有部分视频具有跌倒动作，具体数据形式在[这里](https://www.yuque.com/nalaeur/bstyo8/pyacvh)，将原始数据存放在root_dir文件夹中，数据预处理阶段，将视频数据按照clip_len大小的滑窗连续采样切分为图片，处理后数据存储在output_dir文件夹中，这个过程只运行现一次。<br>
+&emsp;&emsp;使用的Le2i Fall detection Dataset视频数据中，只有部分视频具有跌倒动作，具体数据形式在[这里](https://www.yuque.com/nalaeur/bstyo8/pyacvh)，将原始数据存放在root_dir文件夹中，数据预处理阶段，将视频数据随机抽取clip_len帧数据，组成一个3D数据，处理后数据存储在output_dir文件夹中，这个过程只运行现一次。<br>
 &emsp;&emsp;原始数据存储的格式为:<br>
 ```
 root_dir
