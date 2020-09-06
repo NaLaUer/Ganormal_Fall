@@ -189,30 +189,6 @@ class NetG(nn.Module):
         return latent_i, gen_images, latent_o
 
 
-class NetD(nn.Module):
-    def __init__(self, args):
-        super(NetD, self).__init__()
-        module = Encoder(
-            args.size,
-            args.output_channel,
-            args.org_channel,
-            args.conv_channel,
-            args.ngpu,
-            args.n_extra_layers)
-        layers = list(module.modle.children())
-
-        self.features = nn.Sequential(*layers[:-1])
-        self.classifier = nn.Sequential(layers[-1])
-        self.classifier.add_module('Sigmoid', nn.Sigmoid())
-
-    def forward(self, x):
-        features = self.features(x)
-        features = features
-        classifier = self.classifier(features)
-        classifier = classifier.view(-1, 1).squeeze(1)
-
-        return classifier, features
-
 
 if __name__ == '__main__':
     import sys
