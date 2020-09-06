@@ -16,9 +16,9 @@ torch.cuda.empty_cache()
 torch.set_default_tensor_type('torch.cuda.FloatTensor')
 
 """
-    This script defines the training procedure of GANomaly2D
+    This script defines the training procedure of GANomaly3D
 
-    Author: SunnerLi
+    Author: Lc
 """
 
 

@@ -6,7 +6,7 @@ import os
 """
     This script defines the usage of each parameters
 
-    Author: SunnerLi
+    Author: Lc
 """
 
 
