@@ -11,7 +11,7 @@
 <!-- /TOC -->
 
 ### 1. 项目概述
-&emsp;&emsp;我参考[论文](https://arxiv.org/abs/1805.06725)实现了搭建LRCN模型，
+&emsp;&emsp;我参考[论文](https://arxiv.org/abs/1805.06725)实现了搭建GANomaly模型，
 并将模型在[Le2i Fall detection Dataset](http://le2i.cnrs.fr/Fall-detection-Dataset?lang=fr)
 数据集上进行训练，所构建的Ganomaly模型可以对视频中发生的人的跌倒行为进行识别。对于跌倒检测这一时间序列数据结构，论文中的Enoder值相减，与阈值比较判断是否跌倒现阶段在准确率还有一定的问题，还需要进一步研究。
 
@@ -40,14 +40,14 @@ root_dir
 
 ### 4. 训练模型
 ```
-    python script/train.py  --root_dir /hdd01/lc/Le2i/Video \          # 原始视频数据
+    python train.py  --root_dir /hdd01/lc/Le2i/Video \          # 原始视频数据
                             --save_dir /hdd01/lc/fall/save \           # 模型保存地址
                             --clip_len  4                              # 随机抽样图像数据个数
 ```
 
 ### 5. 验证模型
 ```
-    python script/inference.py  --checkpoint  /save/Gannormal_epoch-45.pth.tar \   # 保存的模型 
+    python test.py  --checkpoint  /save/Gannormal_epoch-45.pth.tar \   # 保存的模型 
                                 --input  /demo/input.mp4                     # 测试的文件
 ```
 
